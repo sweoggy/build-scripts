@@ -61,3 +61,9 @@ pecl-zts channel-update pear.php.net
 pecl-zts install xdebug
 pecl-zts install apcu
 pecl-zts install apcu_bc-beta
+
+
+printf "\n\nEnabling pthreads\n\n"
+
+bash -c 'echo "extension=pthreads.so" > /etc/php/7.1/mods-available/pthreads.ini'
+ln -s /etc/php/7.1/mods-available/pthreads.ini /etc/php/7.1/cli/conf.d/pthreads.ini
